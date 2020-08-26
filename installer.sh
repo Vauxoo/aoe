@@ -1,6 +1,6 @@
 #!/bin/sh
 ############################################################################################
-# Installer for AoE, alrays will download the latest version                               #
+# Installer for AoE, always will download the latest version                               #
 ############################################################################################
 set -e
 
@@ -71,8 +71,8 @@ sha=$(grep "${FULLNAME}" "${SUMSLOCAL}" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -
 check_sha ${TEMP}/${FULLNAME} $sha
 
 echo "Decompressing and installing"
-#(cd "${TEMP}" && tar --no-same-owner -xzf "${FULLNAME}" && mv ${BINARY} /usr/bin)
+(cd "${TEMP}" && tar --no-same-owner -xzf "${FULLNAME}" && mv ${BINARY} /usr/bin)
 
-#rm -r ${TEMP}
+rm -r ${TEMP}
 
 echo "Done"
