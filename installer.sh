@@ -61,10 +61,10 @@ download() {
     wget -q -O ${dest} "${url}"
 }
 
+echo "Version ${TAG} will be installed"
 echo "Downloading binaries..."
 download ${URL} ${TEMP}/${FULLNAME}
 download ${CHECKSUMS} ${SUMSLOCAL}
-
 # Check sha256 sum
 echo "Cheking sha of the file"
 sha=$(grep "${FULLNAME}" "${SUMSLOCAL}" 2>/dev/null | tr '\t' ' ' | cut -d ' ' -f 1)
